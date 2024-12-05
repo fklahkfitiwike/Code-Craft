@@ -23,13 +23,14 @@
         .cards-section {
             display: flex;
             justify-content: space-around;
+            padding: 12px;
             margin: 20px 0;
         }
 
         .card {
             box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
             transition: 0.3s;
-            padding: 16px;
+            padding: 16px !important;
             border-radius: 10px;
             background-color: #222;
             width: 45%;
@@ -52,6 +53,15 @@
             padding: 10px 0;
             font-size: 14px;
         }
+        button{
+            padding: 10px;
+            background-color: transparent;
+            border: solid white;
+            border-radius: 20px;
+        }
+        button a{
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -68,21 +78,26 @@
     </header>
     <main>
         <section id="intro" class="section-padding">
-            <center><h1>Welcome to Code Craft</h1></center>
+            <center><h1 class="welcome">Welcome to Code Craft</h1></center>
+            <br>
             <h2>What is Code Craft?</h2>
             <p>Code Craft is a professional website that covers a lot of fields in programming like software engineering, app development, etc.</p>
         </section>
         <section class="cards-section">
-            <div class="card">
-                <h3>What is coding</h3>
-                <p>Coding is giving orders or instructions to computer to make a program.</p>
-            </div>
+            <!-- <div class="card">
+                <h3>What is coding?</h3>
+                <p>Coding is giving the device an order or instruction to make a project.</p>
+            </div> -->
             <div class="card">
                 <h3>Why learn coding?</h3>
                 <p>Coding is 1 of the most variable skills in the incoming 100 years.</p>
             </div>
         </section>
-        <h4 class="creator-info">Created by <a href="Yehia.html">Yehia Mahmoud</a></h4>
+        <center><button><a href="courses.html"><b>Explore courses</b></a></button></center>
+        <br>
+        <br>
+        <br>
+        <h4 class="creator-info">Created by <a href="Yehia.html"><b>Yehia Mahmoud</b></a></h4>
     </main>
     <script src="scripts.js"></script>
     <script src="security.js"></script>
