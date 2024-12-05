@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Java</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<b>
+
+    <header class="fixed header">
+        <nav>
+            <div class="logo"><a href="index.html">Code Craft</a></div>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                <li><a href="contact.html"><i class="fa-sharp fa-solid fa-comment"></i></a></li>
+                <li><a href="sign-up.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+        <!-- <div class="hero">
+            <h1>Learn Java</h1>
+            <p>Start your Java programming journey here.</p>
+        </div> -->
+    </header>
+    <main>
+        <section id="java-content" class="section-padding">
+            <h2>Overview and Introduction</h2>
+            <p>Java is a versatile, class-based, object-oriented programming language designed to have as few implementation dependencies as possible. It is widely used for building enterprise-scale applications, Android apps, and server-side applications.</p>
+            
+            <h2>Setup and Installation</h2>
+            <p>To get started with Java, you'll need to install the Java Development Kit (JDK) and an Integrated Development Environment (IDE) like IntelliJ IDEA, Eclipse, or NetBeans.</p>
+            <p>Setting up your development environment:
+                <ul>
+                    <li>Download and install the JDK from <a href="https://www.oracle.com/java/technologies/javase-downloads.html">Oracle</a>.</li>
+                    <li>Download and install an IDE of your choice.</li>
+                </ul>
+            </p>
+            
+            <h2>Basic Syntax and Concepts</h2>
+            <p>Variables:</p>
+            <pre>
+<code>int age = 25;
+    String greeting = "Hello, World!";
+    final String constantGreeting = "Welcome!";
+</code>
+</pre>
+<p>Data Types: int, float, double, char, boolean, String</p>
+<table>
+    <thead>
+        <tr>
+            <th>Data Type</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>int</td>
+            <td>Integer</td>
+            <td><code>int age = 25;</code></td>
+        </tr>
+        <tr>
+            <td>float</td>
+            <td>Floating-point number</td>
+            <td><code>float temperature = 36.6f;</code></td>
+        </tr>
+        <tr>
+            <td>double</td>
+            <td>Double precision floating-point number</td>
+            <td><code>double pi = 3.14159;</code></td>
+        </tr>
+        <tr>
+            <td>char</td>
+                        <td>Character</td>
+                        <td><code>char letter = 'A';</code></td>
+                    </tr>
+                    <tr>
+                        <td>boolean</td>
+                        <td>Boolean value</td>
+                        <td><code>boolean isActive = true;</code></td>
+                    </tr>
+                    <tr>
+                        <td>String</td>
+                        <td>String of characters</td>
+                        <td><code>String name = "Alice";</code></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>Control Structures: if, for, while, switch</p>
+            <pre>
+                <code>if (age > 18) {
+                    System.out.println("Adult");
+                } else {
+                    System.out.println("Not an adult");
+                }
+                
+                for (int i = 0; i < 5; i++) {
+                    System.out.println(i);
+                }
+
+                int j = 0;
+                while (j < 5) {
+                    System.out.println(j);
+                    j++;
+                }
+                
+                switch (day) {
+                    case "Saturday":
+    case "Sunday":
+        System.out.println("Weekend");
+        break;
+        default:
+        System.out.println("Weekday");
+        break;
+    }
+</code>
+</pre>
+
+<p>Functions (Methods):</p>
+<pre>
+    <code>public class Main {
+        public static void main(String[] args) {
+            System.out.println(greet("Alice"));
+        }
+        
+        public static String greet(String name) {
+            return "Hello, " + name;
+        }
+    }
+</code>
+</pre>
+
+<h2>Advanced Concepts</h2>
+<p>Classes and Objects:</p>
+<pre>
+    <code>public class Person {
+        private String name;
+        private int age;
+        
+        public Person(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+        
+        public String getDetails() {
+            return "Name: " + name + ", Age: " + age;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Person p = new Person("Alice", 25);
+            System.out.println(p.getDetails());
+        }
+    }
+</code>
+</pre>
+
+<p>Inheritance:</p>
+<pre>
+    <code>public class Animal {
+    public void makeSound() {
+        System.out.println("Some sound");
+    }
+}
+
+public class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.makeSound();
+    }
+}
+</code>
+</pre>
+
+<p>Interfaces:</p>
+<pre>
+    <code>public interface Describable {
+        String describe();
+    }
+    
+    public class Car implements Describable {
+        private String make;
+        private String model;
+        
+        public Car(String make, String model) {
+            this.make = make;
+            this.model = model;
+        }
+        
+        @Override
+        public String describe() {
+            return "Car: " + make + " " + model;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Car car = new Car("Toyota", "Corolla");
+            System.out.println(car.describe());
+        }
+}
+</code>
+</pre>
+
+<h2>Exception Handling</h2>
+<p>Java uses try-catch blocks to handle exceptions gracefully.</p>
+<pre>
+    <code>public class Main {
+        public static void main(String[] args) {
+            try {
+                int result = 10 / 0;
+            } catch (ArithmeticException e) {
+                System.out.println("Cannot divide by zero!");
+            }
+        }
+    }
+</code>
+</pre>
+
+<h2>File I/O</h2>
+<pre>
+    <code>import java.io.BufferedReader;
+        import java.io.FileReader;
+        import java.io.FileWriter;
+        import java.io.IOException;
+        
+        public class Main {
+            public static void main(String[] args) {
+                // Writing to a file
+                try (FileWriter writer = new FileWriter("example.txt")) {
+                    writer.write("Hello, World!");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                
+                // Reading from a file
+                try (BufferedReader reader = new BufferedReader(new FileReader("example.txt"))) {
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        System.out.println(line);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    </code>
+</pre>
+
+<h2>Libraries and Frameworks</h2>
+<p>Popular libraries and frameworks for Java:</p>
+<ul>
+    <li>Spring Framework: For building enterprise-level applications</li>
+    <li>Hibernate: For object-relational mapping (ORM)</li>
+    <li>Apache Maven: For project management and build automation</li>
+    <li>JUnit: For unit testing</li>
+</ul>
+
+<h2>Practical Examples and Projects</h2>
+<p>Simple Console Application:</p>
+<pre>
+    <code>public class Main {
+        public static void main(String[] args) {
+            System.out.println("Hello, World!");
+        }
+    }
+</code>
+</pre>
+
+<p>Basic Web Application with Spring Boot:</p>
+<pre>
+    <code>import org.springframework.boot.SpringApplication;
+        import org.springframework.boot.autoconfigure.SpringBootApplication;
+        import org.springframework.web.bind.annotation.GetMapping;
+        import org.springframework.web.bind.annotation.RestController;
+        
+        @SpringBootApplication
+        public class Application {
+            public static void main(String[] args) {
+                SpringApplication.run(Application.class, args);
+            }
+        }
+        
+        @RestController
+        class HelloController {
+            @GetMapping("/")
+            public String hello() {
+                return "Hello, World!";
+            }
+        }
+    </code>
+</pre>
+
+...
+<h2>Best Practices and Tips</h2>
+<p>Write clean, readable code by following Java's coding standards and conventions.</p>
+<p>Use meaningful variable and method names to enhance readability.</p>
+<p>Leverage Java's robust error handling to manage exceptions gracefully and ensure your application runs smoothly.</p>
+<p>Utilize Java's comprehensive standard library for efficient development and avoid reinventing the wheel.</p>
+<center>finally! you finished java! congratulations :)</center>
+</section>
+</main>
+<script src="scripts.js"></script>
+<script src="security.js"></script>
+</b>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <b>
+
+        <header class="fixed header">
+            <nav>
+                <div class="logo"><a href="index.html">Code Craft</a></div>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                    <li><a href="courses.html"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                    <li><a href="contact.html"><i class="fa-sharp fa-solid fa-comment"></i></a></li>
+                    <li><a href="sign-up.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+        <!-- <div class="hero">
+            <h1>Learn CSS</h1>
+            <p>Start your CSS programming journey here.</p>
+        </div> -->
+    </header>
+    <main>
+        <section id="css-content" class="section-padding">
+            <h2>Overview and Introduction</h2>
+            <p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML or XML. CSS describes how elements should be rendered on screen, on paper, or in other media. It is essential for web developers and designers to create visually engaging web pages.</p>
+            
+            <h2>Setup and Installation</h2>
+            <p>CSS is written within the same file as your HTML code or in a separate file linked to your HTML document. A text editor or IDE like Visual Studio Code, Sublime Text, or Atom can be used to write CSS.</p>
+            <p>Creating a CSS file:
+                <ul>
+                    <li>Create a new file with a <code>.css</code> extension (e.g., <code>styles.css</code>).</li>
+                    <li>Link it to your HTML document using the <code>&lt;link&gt;</code> tag inside the <code>&lt;head&gt;</code> section.</li>
+                </ul>
+            </p>
+            <pre>
+                <code>&lt;link rel="stylesheet" href="styles.css"&gt;
+                </code>
+            </pre>
+            
+            <h2>Basic Syntax and Concepts</h2>
+            <p>CSS Syntax:</p>
+            <pre>
+                <code>selector {
+    property: value;
+}
+</code>
+</pre>
+<p>Selectors: Used to target HTML elements.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Selector</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Element Selector</td>
+            <td>Selects all elements of a given type.</td>
+            <td><code>p { color: red; }</code></td>
+        </tr>
+        <tr>
+            <td>Class Selector</td>
+                        <td>Selects elements with a specific class attribute.</td>
+                        <td><code>.classname { color: blue; }</code></td>
+                    </tr>
+                    <tr>
+                        <td>ID Selector</td>
+                        <td>Selects an element with a specific id attribute.</td>
+                        <td><code>#idname { color: green; }</code></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2>Box Model</h2>
+            <p>The CSS box model is a fundamental concept that describes the structure of HTML elements:</p>
+            <ul>
+                <li><strong>Content</strong>: The actual content of the box, where text and images appear.</li>
+                <li><strong>Padding</strong>: Clears an area around the content. The padding is transparent.</li>
+                <li><strong>Border</strong>: A border that goes around the padding (if any) and content.</li>
+                <li><strong>Margin</strong>: Clears an area outside the border. The margin is transparent.</li>
+            </ul>
+            <pre>
+<code>div {
+    width: 300px;
+    padding: 20px;
+    border: 10px solid black;
+    margin: 30px;
+}
+</code>
+</pre>
+
+<h2>Advanced Concepts</h2>
+<p>Flexbox:</p>
+<pre>
+    <code>.container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+</code>
+</pre>
+<p>Grid:</p>
+<pre>
+    <code>.grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+    }
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        text-align: center;
+    }
+</code>
+</pre>
+<p>Animations:</p>
+<pre>
+    <code>@keyframes example {
+        from {background-color: red;}
+        to {background-color: yellow;}
+    }
+    div {
+        animation-name: example;
+        animation-duration: 4s;
+    }
+</code>
+</pre>
+
+<h2>Responsive Design</h2>
+<p>Viewport Meta Tag:</p>
+<pre>
+    <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    </code>
+</pre>
+<p>Media Queries:</p>
+<pre>
+    <code>@media (max-width: 600px) {
+        .container {
+            flex-direction: column;
+        }
+    }
+</code>
+</pre>
+
+            <h2>Practical Examples and Projects</h2>
+            <p>Creating a Responsive Navigation Menu:</p>
+            <pre>
+                <code>&lt;style&gt;
+                    .navbar {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        background-color: #333;
+                        padding: 10px;
+                    }
+                    .navbar a {
+                        color: white;
+                        text-decoration: none;
+                        padding: 14px 20px;
+                    }
+                    .navbar a:hover {
+                        background-color: #ddd;
+    color: black;
+}
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+}
+&lt;/style&gt;
+&lt;div class="navbar"&gt;
+&lt;a href="#home"&gt;Home&lt;/a&gt;
+&lt;a href="#about"&gt;About&lt;/a&gt;
+&lt;a href="#contact"&gt;Contact&lt;/a&gt;
+&lt;/div&gt;
+</code>
+</pre>
+
+<h2>Best Practices and Tips</h2>
+<p>Organizing CSS:</p>
+<p>Use comments to organize sections of your CSS and group related styles together for better readability.</p>
+<pre>
+    <code>/* Layout */
+        .header {
+            /* styles */
+        }
+        .footer {
+            /* styles */
+        }
+        
+        /* Typography */
+        h1 {
+            /* styles */
+        }
+        p {
+            /* styles */
+        }
+    </code>
+</pre>
+<p>Browser Compatibility:</p>
+<p>Use vendor prefixes for experimental properties to ensure compatibility across different browsers.</p>
+<pre>
+    <code>.example {
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+</code>
+</pre>
+<center>finally! you finished css! congratulations :)</center>
+</section>
+</main>
+<script src="scripts.js"></script>
+<script src="security.js"></script>
+</b>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn R</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="fixed header">
+        <nav>
+            <div class="logo"><a href="index.html">Code Craft</a></div>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                <li><a href="contact.html"><i class="fa-sharp fa-solid fa-comment"></i></a></li>
+                <li><a href="sign-up.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+        <!-- <div class="hero">
+            <h1>Learn R</h1>
+            <p>Start your R programming journey here.</p>
+        </div> -->
+    </header>
+    <main>
+        <section id="r-content" class="section-padding">
+            <h2>Overview and Introduction</h2>
+            <p>R is a language and environment for statistical computing and graphics. It is highly extensible and provides a wide variety of statistical and graphical techniques.</p>
+
+            <h2>Setup and Installation</h2>
+            <p>To get started with R, you can use RStudio, a powerful IDE for R.</p>
+            <p>Setting up your development environment:
+                <ul>
+                    <li>Install R from <a href="https://cran.r-project.org/">CRAN</a>.</li>
+                    <li>Download and install RStudio from <a href="https://www.rstudio.com/products/rstudio/">RStudio</a>.</li>
+                    <li>Create a new R project in RStudio.</li>
+                </ul>
+            </p>
+
+            <h2>Basic Syntax and Concepts</h2>
+            <p>Variables:</p>
+            <pre>
+<code>x <- 5
+y <- "Hello, World!"
+</code>
+</pre>
+            <p>Data Types: numeric, character, logical, factor, data frame</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>numeric</td>
+                        <td>Numeric values</td>
+                        <td><code>x <- 5</code></td>
+                    </tr>
+                    <tr>
+                        <td>character</td>
+                        <td>Character strings</td>
+                        <td><code>y <- "Hello, World!"</code></td>
+                    </tr>
+                    <tr>
+                        <td>logical</td>
+                        <td>Boolean values</td>
+                        <td><code>isTrue <- TRUE</code></td>
+                    </tr>
+                    <tr>
+                        <td>factor</td>
+                        <td>Categorical data</td>
+                        <td><code>factor_var <- factor(c("low", "medium", "high"))</code></td>
+                    </tr>
+                    <tr>
+                        <td>data frame</td>
+                        <td>Tabular data</td>
+                        <td><code>df <- data.frame(x=c(1,2,3), y=c("a","b","c"))</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Control Structures: if, for, while</p>
+            <pre>
+<code>if (x > 0) {
+    print("Positive number")
+} else {
+    print("Non-positive number")
+}
+
+for (i in 1:5) {
+    print(i)
+}
+
+i <- 1
+while (i <= 5) {
+    print(i)
+    i <- i + 1
+}
+</code>
+</pre>
+
+            <p>Functions:</p>
+            <pre>
+<code>my_function <- function(name) {
+    return(paste("Hello", name))
+}
+
+print(my_function("World"))
+</code>
+</pre>
+
+            <h2>Advanced Concepts</h2>
+            <p>Data Manipulation with dplyr:</p>
+            <pre>
+<code>library(dplyr)
+df <- data.frame(x=c(1,2,3), y=c("a","b","c"))
+df <- df %>% filter(x > 1) %>% mutate(z = x * 2)
+print(df)
+</code>
+</pre>
+
+            <p>Data Visualization with ggplot2:</p>
+            <pre>
+<code>library(ggplot2)
+ggplot(data=df, aes(x=x, y=z)) + geom_point()
+</code>
+</pre>
+
+            <h2>Exception Handling</h2>
+            <p>R uses the <code>tryCatch</code> function to handle exceptions gracefully.</p>
+            <pre>
+<code>result <- tryCatch({
+    10 / 0
+}, warning = function(w) {
+    print("Warning occurred")
+}, error = function(e) {
+    print("Error occurred")
+}, finally = {
+    print("Completed")
+})
+</code>
+</pre>
+
+            <h2>Libraries and Frameworks</h2>
+            <p>Popular libraries and frameworks for R:</p>
+            <ul>
+                <li>ggplot2: Data visualization</li>
+                <li>dplyr: Data manipulation</li>
+                <li>shiny: Building interactive web applications</li>
+                <li>caret: Machine learning</li>
+            </ul>
+
+            <h2>Practical Examples and Projects</h2>
+            <p>Simple Shiny App:</p>
+            <pre>
+<code>library(shiny)
+ui <- fluidPage(
+    titlePanel("Simple Shiny App"),
+    sidebarLayout(
+        sidebarPanel(
+            sliderInput("num", "Choose a number", 1, 100, 50)
+        ),
+        mainPanel(
+            textOutput("result")
+        )
+    )
+)
+server <- function(input, output) {
+    output$result <- renderText({
+        paste("You chose", input$num)
+    })
+}
+shinyApp(ui = ui, server = server)
+</code>
+</pre>
+
+            <h2>Best Practices and Tips</h2>
+            <p>Write clean, readable code by following R's coding standards and conventions.</p>
+            <p>Use the powerful data manipulation capabilities of dplyr for efficient data wrangling.</p>
+            <p>Leverage ggplot2 for creating beautiful data visualizations.</p>
+            <center>You've reached the end! Congratulations on learning R :)</center>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+    <script src="security.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn React</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <b>
+    <header class="fixed header">
+        <nav>
+            <div class="logo"><a href="index.html">Code Craft</a></div>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                <li><a href="contact.html"><i class="fa-sharp fa-solid fa-comment"></i></a></li>
+                <li><a href="sign-up.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+        <!-- <div class="hero">
+            <h1>Learn React</h1>
+            <p>Start your journey in React programming here.</p>
+        </div> -->
+    </header>
+    <main>
+        <section id="react-content" class="section-padding">
+            <h2>Overview and Introduction</h2>
+            <p>React is a popular JavaScript library for building user interfaces, particularly for single-page applications. It allows developers to create large web applications that can update and render efficiently in response to data changes.</p>
+
+            <h2>Setup and Installation</h2>
+            <p>To get started with React, you can use Create React App, a tool that sets up a modern web application by running one command.</p>
+            <p>Setting up your development environment:</p>
+            <ul>
+                <li>Install Node.js from <a href="https://nodejs.org/">Node.js</a>.</li>
+                <li>Open your terminal and run <code>npx create-react-app my-app</code> to create a new React project.</li>
+                <li>Navigate to your project directory with <code>cd my-app</code> and start the development server with <code>npm start</code>.</li>
+            </ul>
+
+            <h2>Basic Syntax and Concepts</h2>
+            <p>JSX:</p>
+            <pre><code>const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;</code></pre>
+            <p>Components:</p>
+            <pre><code>function Welcome(props) {
+    return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+}</code></pre>
+            <p>State and Lifecycle:</p>
+            <pre><code>class Clock extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { date: new Date() };
+    }
+
+    componentDidMount() {
+        this.timerID = setInterval(
+            () => this.tick(),
+            1000
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
+
+    tick() {
+        this.setState({
+            date: new Date()
+        });
+    }
+
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;h1&gt;Hello, world!&lt;/h1&gt;
+                &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+            &lt;/div&gt;
+        );
+    }
+}</code></pre>
+
+            <h2>Advanced Concepts</h2>
+            <p>Hooks:</p>
+            <pre><code>import { useState, useEffect } from 'react';
+
+function Example() {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        document.title = `You clicked ${count} times`;
+    });
+
+    return (
+        &lt;div&gt;
+            &lt;p&gt;You clicked {count} times&lt;/p&gt;
+            &lt;button onClick={() => setCount(count + 1)}&gt;
+                Click me
+            &lt;/button&gt;
+        &lt;/div&gt;
+    );
+}</code></pre>
+
+            <p>Context API:</p>
+            <pre><code>const ThemeContext = React.createContext('light');
+
+function App() {
+    return (
+        &lt;ThemeContext.Provider value="dark"&gt;
+            &lt;Toolbar /&gt;
+        &lt;/ThemeContext.Provider&gt;
+    );
+}
+
+function Toolbar() {
+    return (
+        &lt;div&gt;
+            &lt;ThemedButton /&gt;
+        &lt;/div&gt;
+    );
+}
+
+function ThemedButton() {
+    const theme = React.useContext(ThemeContext);
+    return &lt;button style={{ background: theme }}&gt;Button&lt;/button&gt;;
+}</code></pre>
+
+            <h2>Handling Events</h2>
+            <p>React handles events in a similar way to DOM elements. Here’s an example:</p>
+            <pre><code>function ActionLink() {
+    function handleClick(e) {
+        e.preventDefault();
+        console.log('The link was clicked.');
+    }
+
+    return (
+        &lt;a href="#" onClick={handleClick}&gt;
+            Click me
+        &lt;/a&gt;
+    );
+}</code></pre>
+
+            <h2>Conditional Rendering</h2>
+            <pre><code>function Greeting(props) {
+    const isLoggedIn = props.isLoggedIn;
+    if (isLoggedIn) {
+        return &lt;h1&gt;Welcome back!&lt;/h1&gt;;
+    }
+    return &lt;h1&gt;Please sign up.&lt;/h1&gt;;
+}</code></pre>
+
+            <h2>Lists and Keys</h2>
+            <pre><code>function NumberList(props) {
+    const numbers = props.numbers;
+    const listItems = numbers.map((number) =>
+        &lt;li key={number.toString()}&gt;
+            {number}
+        &lt;/li&gt;
+    );
+    return (
+        &lt;ul&gt;{listItems}&lt;/ul&gt;
+    );
+}</code></pre>
+
+            <h2>Forms</h2>
+            <pre><code>class NameForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { value: '' };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({ value: event.target.value });
+    }
+
+    handleSubmit(event) {
+        alert('A name was submitted: ' + this.state.value);
+        event.preventDefault();
+    }
+
+    render() {
+        return (
+            &lt;form onSubmit={this.handleSubmit}&gt;
+                &lt;label&gt;
+                    Name:
+                    &lt;input type="text" value={this.state.value} onChange={this.handleChange} /&gt;
+                &lt;/label&gt;
+                &lt;input type="submit" value="Submit" /&gt;
+            &lt;/form&gt;
+        );
+    }
+}</code></pre>
+
+            <h2>Best Practices and Tips</h2>
+            <p>Write clean, modular code by following React's component-based architecture.</p>
+            <p>Leverage React hooks to manage state and side effects in functional components.</p>
+            <p>Use PropTypes to catch bugs by validating the props passed to your components.</p>
+            <center>Finally! You finished React! Congratulations :)</center>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+    <script src="security.js"></script>
+</b>
+</body>
+</html>

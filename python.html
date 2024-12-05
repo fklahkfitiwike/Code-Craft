@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Python</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <b>
+<header class="fixed header">
+            <nav>
+                <div class="logo"><a href="index.html">Code Craft</a></div>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                <li><a href="contact.html"><i class="fa-sharp fa-solid fa-comment"></i></a></li>
+                <li><a href="sign-up.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+        <!-- <div class="hero">
+            <h1>Learn Python</h1>
+            <p>Start your Python programming journey here.</p>
+        </div> -->
+    </header>
+    <main>
+        <section id="python-content" class="section-padding">
+            <h2>Overview and Introduction</h2>
+            <p>Python is a high-level, interpreted language known for its simplicity and readability. It is widely used for web development, data analysis, artificial intelligence, scientific computing, and more.</p>
+            
+            <h2>Setup and Installation</h2>
+            <p>Install Python from <a href="https://www.python.org/">python.org</a>.</p>
+            <p>Use IDEs like PyCharm, VS Code, or Jupyter Notebook for an enhanced development experience.</p>
+            
+            <h2>Basic Syntax and Concepts</h2>
+            <p>Variables:</p>
+            <pre>
+                <code>x = 5
+                    y = "Hello, World!"
+                </code>
+            </pre>
+            <p>Data Types: int, float, str, list, dict</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>int</td>
+                        <td>Integer</td>
+                        <td><code>x = 10</code></td>
+                    </tr>
+                    <tr>
+                        <td>float</td>
+                        <td>Floating-point number</td>
+                        <td><code>y = 10.5</code></td>
+                    </tr>
+                    <tr>
+                        <td>str</td>
+                        <td>String</td>
+                        <td><code>name = "Alice"</code></td>
+                    </tr>
+                    <tr>
+                        <td>list</td>
+                        <td>List (array)</td>
+                        <td><code>colors = ["red", "green", "blue"]</code></td>
+                    </tr>
+                    <tr>
+                        <td>dict</td>
+                        <td>Dictionary (key-value pairs)</td>
+                        <td><code>person = {"name": "Alice", "age": 25}</code></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>Control Structures: if, for, while</p>
+            <pre>
+                <code>if x > 0:
+    print("Positive")
+else:
+    print("Non-positive")
+    
+    for color in colors:
+    print(color)
+    
+    i = 0
+    while i < 5:
+    print(i)
+    i += 1
+</code>
+</pre>
+
+<p>Functions:</p>
+<pre>
+    <code>def greet(name):
+        return "Hello, " + name
+        
+        print(greet("Alice"))
+    </code>
+</pre>
+
+<h2>Advanced Concepts</h2>
+<p>Classes and Objects:</p>
+<pre>
+    <code>class Person:
+        def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+        def get_details(self):
+        return f"Name: {self.name}, Age: {self.age}"
+        
+        p = Person("Alice", 25)
+        print(p.get_details())
+    </code>
+</pre>
+
+<p>Exception Handling:</p>
+<pre>
+    <code>try:
+        x = 10 / 0
+        except ZeroDivisionError:
+        print("Cannot divide by zero!")
+    </code>
+</pre>
+
+<p>File I/O:</p>
+<pre>
+    <code>with open("file.txt", "r") as file:
+        content = file.read()
+        print(content)
+</code>
+</pre>
+
+<h2>Libraries and Frameworks</h2>
+<p>Popular libraries for Python:</p>
+<ul>
+    <li>NumPy, pandas for data analysis</li>
+    <li>Django, Flask for web development</li>
+    <li>TensorFlow, PyTorch for AI</li>
+</ul>
+
+<h2>Practical Examples and Projects</h2>
+<p>Simple Web Scraper using BeautifulSoup:</p>
+<pre>
+    <code>from bs4 import BeautifulSoup
+        import requests
+        
+        url = "http://example.com"
+        response = requests.get(url)
+        soup = BeautifulSoup(response.content, "html.parser")
+        
+        print(soup.title.string)
+    </code>
+</pre>
+
+<p>Data Analysis with pandas:</p>
+<pre>
+    <code>import pandas as pd
+        
+        data = {
+            "name": ["Alice", "Bob", "Charlie"],
+            "age": [25, 30, 35]
+        }
+        df = pd.DataFrame(data)
+        print(df)
+    </code>
+</pre>
+
+<p>Basic Web App with Flask:</p>
+<pre>
+    <code>from flask import Flask
+        
+        app = Flask(__name__)
+        
+        @app.route("/")
+        def home():
+        return "Hello, World!"
+        
+        if __name__ == "__main__":
+        app.run(debug=True)
+    </code>
+</pre>
+
+<h2>Best Practices and Tips</h2>
+<p>Follow PEP 8 coding standards for consistent and readable code.</p>
+<p>Optimize code for performance using built-in functions and libraries.</p>
+<p>Use virtual environments to manage dependencies and avoid conflicts.</p>
+<center>finally! you finished python! congratulations :)</center>
+</section>
+</main>
+<script src="scripts.js"></script>
+<script src="security.js"></script>
+</b>
+</body>
+</html>

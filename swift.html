@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Swift</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <b>
+    <header class="fixed header">
+        <nav>
+            <div class="logo"><a href="index.html">Code Craft</a></div>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                <li><a href="contact.html"><i class="fa-sharp fa-solid fa-comment"></i></a></li>
+                <li><a href="sign-up.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+        <!-- <div class="hero">
+            <h1>Learn Swift</h1>
+            <p>Start your Swift programming journey here.</p>
+        </div> -->
+    </header>
+    <main>
+        <section id="swift-content" class="section-padding">
+            <h2>Overview and Introduction</h2>
+            <p>Swift is a powerful and intuitive programming language developed by Apple for iOS, macOS, watchOS, and tvOS app development. It is designed to be easy to use and offers modern features for developers.</p>
+
+            <h2>Setup and Installation</h2>
+            <p>To get started with Swift, you'll need to install Xcode, Apple's integrated development environment (IDE), from the Mac App Store. Xcode provides tools for developing software for Apple's platforms, including the Swift compiler and editor.</p>
+
+            <h2>Basic Syntax and Concepts</h2>
+            <p>Variables:</p>
+            <pre>
+<code>var greeting = "Hello, World!"
+let constantGreeting = "Welcome!"
+</code>
+</pre>
+            <p>Data Types: Int, Float, Double, String, Bool, Array, Dictionary</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Int</td>
+                        <td>Integer</td>
+                        <td><code>var age: Int = 25</code></td>
+                    </tr>
+                    <tr>
+                        <td>Float</td>
+                        <td>Floating-point number</td>
+                        <td><code>var temperature: Float = 36.6</code></td>
+                    </tr>
+                    <tr>
+                        <td>Double</td>
+                        <td>Double precision floating-point number</td>
+                        <td><code>var pi: Double = 3.14159</code></td>
+                    </tr>
+                    <tr>
+                        <td>String</td>
+                        <td>String of characters</td>
+                        <td><code>var name: String = "Alice"</code></td>
+                    </tr>
+                    <tr>
+                        <td>Bool</td>
+                        <td>Boolean value</td>
+                        <td><code>var isActive: Bool = true</code></td>
+                    </tr>
+                    <tr>
+                        <td>Array</td>
+                        <td>Collection of values</td>
+                        <td><code>var colors: [String] = ["Red", "Green", "Blue"]</code></td>
+                    </tr>
+                    <tr>
+                        <td>Dictionary</td>
+                        <td>Collection of key-value pairs</td>
+                        <td><code>var person: [String: Any] = ["name": "Alice", "age": 25]</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Control Structures: if, for, while</p>
+            <pre>
+<code>if age > 18 {
+    print("Adult")
+} else {
+    print("Not an adult")
+}
+
+for color in colors {
+    print(color)
+}
+
+var i = 0
+while i < 5 {
+    print(i)
+    i += 1
+}
+</code>
+</pre>
+
+            <p>Functions:</p>
+            <pre>
+<code>func greet(name: String) -> String {
+    return "Hello, \(name)"
+}
+
+print(greet(name: "Alice"))
+</code>
+</pre>
+
+            <h2>Advanced Concepts</h2>
+            <p>Classes and Objects:</p>
+            <pre>
+<code>class Person {
+    var name: String
+    var age: Int
+
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+
+    func getDetails() -> String {
+        return "Name: \(name), Age: \(age)"
+    }
+}
+
+let p = Person(name: "Alice", age: 25)
+print(p.getDetails())
+</code>
+</pre>
+
+            <p>Structs:</p>
+            <pre>
+<code>struct Rectangle {
+    var width: Double
+    var height: Double
+
+    func area() -> Double {
+        return width * height
+    }
+}
+
+let rect = Rectangle(width: 10.0, height: 20.0)
+print("Area: \(rect.area())")
+</code>
+</pre>
+
+            <p>Protocols and Extensions:</p>
+            <pre>
+<code>protocol Describable {
+    func describe() -> String
+}
+
+extension Int: Describable {
+    func describe() -> String {
+        return "This is the number \(self)"
+    }
+}
+
+let num = 42
+print(num.describe())
+</code>
+</pre>
+
+            <h2>Exception Handling</h2>
+            <p>Swift uses the <code>do-catch</code> statement to handle errors gracefully.</p>
+            <pre>
+<code>enum FileError: Error {
+    case fileNotFound
+    case unreadable
+}
+
+func readFile(name: String) throws -> String {
+    guard name == "existingFile.txt" else {
+        throw FileError.fileNotFound
+    }
+    return "File content"
+}
+
+do {
+    let content = try readFile(name: "nonexistentFile.txt")
+    print(content)
+} catch {
+    print("Error: \(error)")
+}
+</code>
+</pre>
+
+            <h2>Libraries and Frameworks</h2>
+            <p>Popular libraries and frameworks for Swift:</p>
+            <ul>
+                <li>UIKit: Essential framework for building iOS applications</li>
+                <li>SwiftUI: A modern way to declare user interfaces for any Apple platform</li>
+                <li>Alamofire: HTTP networking library</li>
+                <li>CoreData: Framework for managing model layer objects in your application</li>
+            </ul>
+
+            <h2>Practical Examples and Projects</h2>
+            <p>Simple iOS App with SwiftUI:</p>
+            <pre>
+<code>import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            Text("Hello, SwiftUI!")
+                .font(.largeTitle)
+                .padding()
+            Button(action: {
+                print("Button tapped!")
+            }) {
+                Text("Tap me")
+            }
+        }
+    }
+}
+
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
+</code>
+</pre>
+
+            <h2>Best Practices and Tips</h2>
+            <p>Write clean, readable code by following Swift's coding standards and conventions.</p>
+            <p>Use optionals and safe unwrapping to handle the absence of a value safely.</p>
+            <p>Take advantage of Swift's powerful type inference to write concise and expressive code.</p>
+            <center>finally! you finished go! congratulations :)</center>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+    <script src="security.js"></script>
+</b>
+</body>
+</html>

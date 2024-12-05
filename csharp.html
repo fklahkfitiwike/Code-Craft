@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn C#</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <b>
+<header class="fixed header">
+        <nav>
+            <div class="logo"><a href="index.html">Code Craft</a></div>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                <li><a href="contact.html"><i class="fa-sharp fa-solid fa-comment"></i></a></li>
+                <li><a href="sign-up.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+        <!-- <div class="hero">
+            <h1>Learn C#</h1>
+            <p>Start your C# programming journey here.</p>
+        </div> -->
+    </header>
+    <main>
+        <section id="csharp-content" class="section-padding">
+            <h2>Overview and Introduction</h2>
+            <p>C# (pronounced "C-sharp") is a modern, object-oriented programming language developed by Microsoft. It is widely used for building Windows applications, web applications, and game development with Unity. C# is part of the .NET ecosystem.</p>
+
+            <h2>Setup and Installation</h2>
+            <p>To get started with C#, you'll need to install Visual Studio, a powerful Integrated Development Environment (IDE) for .NET development. You can download it from <a href="https://visualstudio.microsoft.com/">Microsoft Visual Studio</a>.</p>
+            <p>Alternatively, you can use Visual Studio Code with the C# extension for a lightweight coding environment.</p>
+
+            <h2>Basic Syntax and Concepts</h2>
+            <p>Variables:</p>
+            <pre>
+<code>int x = 5;
+string y = "Hello, World!";
+</code>
+</pre>
+            <p>Data Types: int, float, string, bool, char</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>int</td>
+                        <td>Integer</td>
+                        <td><code>int number = 10;</code></td>
+                    </tr>
+                    <tr>
+                        <td>float</td>
+                        <td>Floating-point number</td>
+                        <td><code>float temperature = 36.6F;</code></td>
+                    </tr>
+                    <tr>
+                        <td>string</td>
+                        <td>String</td>
+                        <td><code>string name = "Alice";</code></td>
+                    </tr>
+                    <tr>
+                        <td>bool</td>
+                        <td>Boolean</td>
+                        <td><code>bool isActive = true;</code></td>
+                    </tr>
+                    <tr>
+                        <td>char</td>
+                        <td>Character</td>
+                        <td><code>char letter = 'A';</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Control Structures: if, for, while</p>
+            <pre>
+<code>if (x > 0)
+{
+    Console.WriteLine("Positive");
+}
+else
+{
+    Console.WriteLine("Non-positive");
+}
+
+for (int i = 0; i < 5; i++)
+{
+    Console.WriteLine(i);
+}
+
+int j = 0;
+while (j < 5)
+{
+    Console.WriteLine(j);
+    j++;
+}
+</code>
+</pre>
+
+            <p>Functions:</p>
+            <pre>
+<code>public string Greet(string name)
+{
+    return "Hello, " + name;
+}
+
+Console.WriteLine(Greet("Alice"));
+</code>
+</pre>
+
+            <h2>Advanced Concepts</h2>
+            <p>Classes and Objects:</p>
+            <pre>
+<code>public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public string GetDetails()
+    {
+        return $"Name: {Name}, Age: {Age}";
+    }
+}
+
+Person p = new Person() { Name = "Alice", Age = 25 };
+Console.WriteLine(p.GetDetails());
+</code>
+</pre>
+
+            <p>Exception Handling:</p>
+            <pre>
+<code>try
+{
+    int result = 10 / 0;
+}
+catch (DivideByZeroException ex)
+{
+    Console.WriteLine("Cannot divide by zero!");
+}
+</code>
+</pre>
+
+            <p>File I/O:</p>
+            <pre>
+<code>using System.IO;
+
+string text = File.ReadAllText(@"C:\example.txt");
+Console.WriteLine(text);
+
+File.WriteAllText(@"C:\example.txt", "Hello, World!");
+</code>
+</pre>
+
+            <h2>Libraries and Frameworks</h2>
+            <p>Popular libraries and frameworks for C#:</p>
+            <ul>
+                <li>ASP.NET: For building web applications and services</li>
+                <li>Entity Framework: An ORM (Object-Relational Mapper) for data access</li>
+                <li>Unity: A cross-platform game engine for game development</li>
+                <li>Xamarin: For building cross-platform mobile applications</li>
+            </ul>
+
+            <h2>Practical Examples and Projects</h2>
+            <p>Simple Console Application:</p>
+            <pre>
+<code>using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
+</code>
+</pre>
+
+            <p>ASP.NET Web Application:</p>
+            <pre>
+<code>using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddControllersWithViews();
+    }
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        app.UseRouting();
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+        });
+    }
+}
+</code>
+</pre>
+
+            <h2>Best Practices and Tips</h2>
+            <p>Follow coding standards and conventions for readability and maintainability.</p>
+            <p>Use exception handling to manage errors gracefully.</p>
+            <p>Optimize performance by avoiding unnecessary computations and using efficient algorithms.</p>
+            <center>finally! you finished C#! congratulations :)</center>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+    <script src="security.js"></script>
+</b>
+</body>
+</html>

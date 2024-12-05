@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn C++</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <b>
+        <header>
+            <nav>
+                <div class="logo"><a href="index.html">Code Craft</a></div>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                <li><a href="contact.html"><i class="fa-sharp fa-solid fa-comment"></i></a></li>
+                <li><a href="sign-up.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+        <!-- <div class="hero">
+            <h1>Learn C++</h1>
+            <p>Start your C++ programming journey here.</p>
+        </div> -->
+    </header>
+    <main>
+        <section id="cplusplus-content" class="section-padding">
+            <h2>Overview and Introduction</h2>
+            <p>C++ is a powerful, high-performance programming language used for system/software development, game development, and more. It is known for its performance, efficiency, and flexibility. C++ supports both procedural and object-oriented programming paradigms.</p>
+            
+            <h2>Setup and Installation</h2>
+            <p>To get started with C++, you'll need to install a compiler like GCC (GNU Compiler Collection) or Clang, and an IDE like Visual Studio, Code::Blocks, or CLion.</p>
+            <p>For Windows, you can install the MinGW (Minimalist GNU for Windows) to use GCC.</p>
+            <p>For macOS and Linux, you can use the terminal to install GCC or Clang.</p>
+            
+            <h2>Basic Syntax and Concepts</h2>
+            <p>Variables:</p>
+            <pre>
+                <code>int x = 5;
+                    std::string y = "Hello, World!";
+                </code>
+            </pre>
+            <p>Data Types: int, float, double, char, bool, string</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>int</td>
+                        <td>Integer</td>
+                        <td><code>int number = 10;</code></td>
+                    </tr>
+                    <tr>
+                        <td>float</td>
+                        <td>Floating-point number</td>
+                        <td><code>float temperature = 36.6f;</code></td>
+                    </tr>
+                    <tr>
+                        <td>double</td>
+                        <td>Double precision floating-point number</td>
+                        <td><code>double pi = 3.14159;</code></td>
+                    </tr>
+                    <tr>
+                        <td>char</td>
+                        <td>Character</td>
+                        <td><code>char letter = 'A';</code></td>
+                    </tr>
+                    <tr>
+                        <td>bool</td>
+                        <td>Boolean</td>
+                        <td><code>bool isActive = true;</code></td>
+                    </tr>
+                    <tr>
+                        <td>std::string</td>
+                        <td>String (requires <code>#include &lt;string&gt;</code>)</td>
+                        <td><code>std::string name = "Alice";</code></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>Control Structures: if, for, while</p>
+            <pre>
+                <code>if (x > 0)
+                    {
+                        std::cout << "Positive" << std::endl;
+                    }
+                    else
+                    {
+                        std::cout << "Non-positive" << std::endl;
+                    }
+                    
+                    for (int i = 0; i < 5; ++i)
+                    {
+                        std::cout << i << std::endl;
+                    }
+                    
+int j = 0;
+while (j < 5)
+{
+    std::cout << j << std::endl;
+    ++j;
+}
+</code>
+</pre>
+
+<p>Functions:</p>
+<pre>
+    <code>#include &lt;iostream&gt;
+        
+        void greet(std::string name)
+        {
+            std::cout << "Hello, " << name << std::endl;
+        }
+        
+        int main()
+        {
+            greet("Alice");
+            return 0;
+        }
+    </code>
+</pre>
+
+<h2>Advanced Concepts</h2>
+<p>Classes and Objects:</p>
+<pre>
+    <code>#include &lt;iostream&gt;
+        #include &lt;string&gt;
+        
+        class Person
+        {
+            public:
+            std::string name;
+            int age;
+            
+            Person(std::string name, int age) : name(name), age(age) {}
+            
+            void getDetails()
+            {
+                std::cout << "Name: " << name << ", Age: " << age << std::endl;
+            }
+        };
+        
+        int main()
+        {
+            Person p("Alice", 25);
+            p.getDetails();
+            return 0;
+        }
+    </code>
+</pre>
+
+<p>Exception Handling:</p>
+<pre>
+    <code>#include &lt;iostream&gt;
+        #include &lt;exception&gt;
+        
+        int main()
+        {
+            try
+            {
+                int result = 10 / 0;
+            }
+            catch (const std::exception& ex)
+            {
+                std::cout << "Exception: " << ex.what() << std::endl;
+            }
+            return 0;
+        }
+    </code>
+</pre>
+
+<p>File I/O:</p>
+<pre>
+    <code>#include &lt;fstream&gt;
+        #include &lt;iostream&gt;
+        #include &lt;string&gt;
+        
+        int main()
+        {
+            std::ifstream inputFile("example.txt");
+            std::string content;
+            if (inputFile.is_open())
+            {
+                while (getline(inputFile, content))
+                {
+                    std::cout << content << std::endl;
+                }
+                inputFile.close();
+            }
+            else
+            {
+                std::cout << "Unable to open file" << std::endl;
+            }
+            
+            std::ofstream outputFile("example.txt");
+            if (outputFile.is_open())
+            {
+                outputFile << "Hello, World!";
+                outputFile.close();
+            }
+            else
+            {
+                std::cout << "Unable to open file" << std::endl;
+            }
+            
+            return 0;
+        }
+</code>
+</pre>
+
+<h2>Libraries and Frameworks</h2>
+<p>Popular libraries for C++:</p>
+<ul>
+    <li>Standard Template Library (STL): A collection of classes and functions for data structures and algorithms.</li>
+    <li>Boost: A set of libraries for various functionalities, including string manipulation, threading, and more.</li>
+    <li>Qt: A framework for developing cross-platform applications with a graphical user interface.</li>
+    <li>OpenCV: A library for computer vision and image processing.</li>
+</ul>
+
+<h2>Practical Examples and Projects</h2>
+<p>Simple Console Application:</p>
+<pre>
+    <code>#include &lt;iostream&gt;
+        
+        int main()
+        {
+            std::cout << "Hello, World!" << std::endl;
+            return 0;
+        }
+    </code>
+</pre>
+
+<p>Using the Standard Template Library (STL):</p>
+<pre>
+    <code>#include &lt;iostream&gt;
+        #include &lt;vector&gt;
+        #include &lt;algorithm&gt;
+        
+        int main()
+        {
+            std::vector&lt;int&gt; numbers = {1, 2, 3, 4, 5};
+    std::sort(numbers.begin(), numbers.end(), std::greater&lt;int&gt;());
+    
+    for (int num : numbers)
+    {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+    
+    return 0;
+}
+</code>
+</pre>
+
+<h2>Best Practices and Tips</h2>
+<p>Use consistent naming conventions and code style for readability and maintainability.</p>
+<p>Leverage the Standard Template Library (STL) for efficient data structures and algorithms.</p>
+<p>Manage memory carefully to avoid leaks and undefined behavior.</p>
+<center>finally! you finished C++! congratulations :)</center>
+</section>
+</main>
+<script src="scripts.js"></script>
+<script src="security.js"></script>
+</b>
+</body>
+</html>

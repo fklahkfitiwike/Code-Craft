@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <b>
+        <header class="fixed header">
+            <nav>
+                <div class="logo"><a href="index.html">Code Craft</a></div>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                    <li><a href="courses.html"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                    <li><a href="contact.html"><i class="fa-sharp fa-solid fa-comment"></i></a></li>
+                    <li><a href="sign-up.html"><i class="fa-solid fa-user"></i></a></li>
+                </ul>
+            </nav>
+            <!-- <div class="hero">
+                <h1>Learn HTML</h1>
+                <p>Start your HTML programming journey here.</p>
+            </div> -->
+        </header>
+        <main>
+            <section id="html-content" class="section-padding">
+                <h2>Overview and Introduction</h2>
+            <p>HTML (HyperText Markup Language) is the standard language for creating web pages and web applications. It defines the structure of a webpage and consists of a series of elements and tags. HTML is essential for creating web content and is used by web developers, designers, and content creators to build and structure web pages.</p>
+            
+            <h2>Setup and Installation</h2>
+            <p>You don't need special software to write HTML—just a text editor like Notepad (Windows) or TextEdit (Mac). However, using an IDE or code editor like Visual Studio Code, Sublime Text, or Atom can make coding easier.</p>
+            <p>Setting up your development environment:
+                <ul>
+                    <li>Install a text editor or IDE of your choice.</li>
+                    <li>Create a new file with a <code>.html</code> extension (e.g., <code>index.html</code>).</li>
+                </ul>
+            </p>
+            
+            <h2>Basic Syntax and Concepts</h2>
+            <p>HTML Structure:</p>
+            <pre>
+<code>&lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code>
+</pre>
+            <p>Tags and Elements:
+                <ul>
+                    <li>Tags are used to mark up the start and end of an element. They are enclosed in angle brackets, e.g., <code>&lt;tagname&gt;</code>.</li>
+                    <li>Elements are the building blocks of HTML and can contain text, attributes, or other elements.</li>
+                </ul>
+            </p>
+            
+            <h3>Common HTML Tags</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>&lt;!DOCTYPE html&gt;</code></td>
+                        <td>Defines the document type and version of HTML</td>
+                        <td><code>&lt;!DOCTYPE html&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;html&gt;</code></td>
+                        <td>The root element of an HTML page</td>
+                        <td><code>&lt;html lang="en"&gt; ... &lt;/html&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;head&gt;</code></td>
+                        <td>Contains meta-information about the HTML document</td>
+                        <td><code>&lt;head&gt; ... &lt;/head&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;body&gt;</code></td>
+                        <td>Contains the content of the HTML document</td>
+                        <td><code>&lt;body&gt; ... &lt;/body&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;h1&gt; to &lt;h6&gt;</code></td>
+                        <td>Header tags, <code>&lt;h1&gt;</code> being the highest and <code>&lt;h6&gt;</code> the lowest level</td>
+                        <td><code>&lt;h1&gt;Title&lt;/h1&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;p&gt;</code></td>
+                        <td>Paragraph tag</td>
+                        <td><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;a&gt;</code></td>
+                        <td>Anchor tag for links</td>
+                        <td><code>&lt;a href="https://example.com"&gt;Link&lt;/a&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;img&gt;</code></td>
+                        <td>Image tag</td>
+                        <td><code>&lt;img src="image.jpg" alt="Description"&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;div&gt;</code></td>
+                        <td>Division tag, used to group elements</td>
+                        <td><code>&lt;div&gt; ... &lt;/div&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;span&gt;</code></td>
+                        <td>Inline container, used to apply styles</td>
+                        <td><code>&lt;span&gt; ... &lt;/span&gt;</code></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2>Advanced Concepts</h2>
+            <p>Forms:</p>
+            <pre>
+                <code>&lt;form action="/submit-form" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+    &lt;/form&gt;
+</code>
+</pre>
+<p>Tables:</p>
+<pre>
+    <code>&lt;table&gt;
+        &lt;tr&gt;
+        &lt;th&gt;Heading 1&lt;/th&gt;
+        &lt;th&gt;Heading 2&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;Data 1&lt;/td&gt;
+        &lt;td&gt;Data 2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    </code>
+</pre>
+<p>Lists:
+    <ul>
+        <li><strong>Ordered List:</strong></li>
+        <pre>
+            <code>&lt;ol&gt;
+                &lt;li&gt;Item 1&lt;/li&gt;
+                &lt;li&gt;Item 2&lt;/li&gt;
+                &lt;/ol&gt;
+            </code>
+        </pre>
+        <li><strong>Unordered List:</strong></li>
+        <pre>
+            <code>&lt;ul&gt;
+                &lt;li&gt;Item 1&lt;/li&gt;
+                &lt;li&gt;Item 2&lt;/li&gt;
+                &lt;/ul&gt;
+            </code>
+        </pre>
+    </ul>
+</p>
+
+<h2>Media Elements</h2>
+<p>Images:</p>
+<pre>
+    <code>&lt;img src="image.jpg" alt="Description of image"&gt;
+    </code>
+</pre>
+<p>Videos:</p>
+<pre>
+    <code>&lt;video controls&gt;
+        &lt;source src="movie.mp4" type="video/mp4"&gt;
+        Your browser does not support the video tag.
+        &lt;/video&gt;
+    </code>
+</pre>
+<p>Audio:</p>
+<pre>
+    <code>&lt;audio controls&gt;
+        &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+        Your browser does not support the audio element.
+        &lt;/audio&gt;
+    </code>
+</pre>
+
+<h2>Practical Examples and Projects</h2>
+<p>Simple Web Page:</p>
+<pre>
+    <code>&lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Simple Web Page&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+    </code>
+</pre>
+<center>finally! you finished Html! congratulations :)</center>
+</section>
+</main>
+<script src="scripts.js"></script>
+<script src="security.js"></script>
+</b>
+</body>
+</html>

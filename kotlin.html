@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Kotlin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <b>
+<header class="fixed header">
+        <nav>
+            <div class="logo"><a href="index.html">Code Craft</a></div>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                <li><a href="contact.html"><i class="fa-sharp fa-solid fa-comment"></i></a></li>
+                <li><a href="sign-up.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+        <!-- <div class="hero">
+            <h1>Learn Kotlin</h1>
+            <p>Start your Kotlin programming journey here.</p>
+        </div> -->
+    </header>
+    <main>
+        <section id="kotlin-content" class="section-padding">
+            <h2>Overview and Introduction</h2>
+            <p>Kotlin is a modern, statically typed programming language that is fully interoperable with Java. It is widely used for Android app development and has gained popularity for its concise syntax and safety features.</p>
+
+            <h2>Setup and Installation</h2>
+            <p>To get started with Kotlin, you can use IntelliJ IDEA, Android Studio, or Visual Studio Code with the Kotlin plugin.</p>
+            <p>Setting up your development environment:
+                <ul>
+                    <li>Install IntelliJ IDEA from <a href="https://www.jetbrains.com/idea/">JetBrains</a> or Android Studio from <a href="https://developer.android.com/studio">Google</a>.</li>
+                    <li>Create a new Kotlin project.</li>
+                </ul>
+            </p>
+
+            <h2>Basic Syntax and Concepts</h2>
+            <p>Variables:</p>
+            <pre>
+<code>var greeting: String = "Hello, World!"
+val constantGreeting: String = "Welcome!"
+</code>
+</pre>
+            <p>Data Types: Int, Float, Double, String, Boolean, Array, List, Map</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Int</td>
+                        <td>Integer</td>
+                        <td><code>var age: Int = 25</code></td>
+                    </tr>
+                    <tr>
+                        <td>Float</td>
+                        <td>Floating-point number</td>
+                        <td><code>var temperature: Float = 36.6F</code></td>
+                    </tr>
+                    <tr>
+                        <td>Double</td>
+                        <td>Double precision floating-point number</td>
+                        <td><code>var pi: Double = 3.14159</code></td>
+                    </tr>
+                    <tr>
+                        <td>String</td>
+                        <td>String of characters</td>
+                        <td><code>var name: String = "Alice"</code></td>
+                    </tr>
+                    <tr>
+                        <td>Boolean</td>
+                        <td>Boolean value</td>
+                        <td><code>var isActive: Boolean = true</code></td>
+                    </tr>
+                    <tr>
+                        <td>Array</td>
+                        <td>Collection of values</td>
+                        <td><code>var colors: Array<String> = arrayOf("Red", "Green", "Blue")</code></td>
+                    </tr>
+                    <tr>
+                        <td>List</td>
+                        <td>Collection of ordered values</td>
+                        <td><code>val numbers: List<Int> = listOf(1, 2, 3, 4, 5)</code></td>
+                    </tr>
+                    <tr>
+                        <td>Map</td>
+                        <td>Collection of key-value pairs</td>
+                        <td><code>val person: Map<String, Any> = mapOf("name" to "Alice", "age" to 25)</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Control Structures: if, for, while</p>
+            <pre>
+<code>if (age > 18) {
+    println("Adult")
+} else {
+    println("Not an adult")
+}
+
+for (color in colors) {
+    println(color)
+}
+
+var i = 0
+while (i < 5) {
+    println(i)
+    i++
+}
+</code>
+</pre>
+
+            <p>Functions:</p>
+            <pre>
+<code>fun greet(name: String): String {
+    return "Hello, $name"
+}
+
+println(greet("Alice"))
+</code>
+</pre>
+
+            <h2>Advanced Concepts</h2>
+            <p>Classes and Objects:</p>
+            <pre>
+<code>class Person(val name: String, var age: Int) {
+    fun getDetails(): String {
+        return "Name: $name, Age: $age"
+    }
+}
+
+val p = Person("Alice", 25)
+println(p.getDetails())
+</code>
+</pre>
+
+            <p>Data Classes:</p>
+            <pre>
+<code>data class User(val name: String, val age: Int)
+
+val user = User("Alice", 25)
+println(user)
+</code>
+</pre>
+
+            <p>Null Safety:</p>
+            <pre>
+<code>var nullableString: String? = "Hello"
+nullableString = null
+
+fun getLength(str: String?): Int {
+    return str?.length ?: 0
+}
+
+println(getLength(nullableString))
+</code>
+</pre>
+
+            <p>Extension Functions:</p>
+            <pre>
+<code>fun String.addExclamation(): String {
+    return this + "!"
+}
+
+val exclaim = "Hello".addExclamation()
+println(exclaim)
+</code>
+</pre>
+
+            <h2>Exception Handling</h2>
+            <p>Kotlin uses the <code>try-catch</code> block to handle exceptions gracefully.</p>
+            <pre>
+<code>try {
+    val result = 10 / 0
+} catch (e: ArithmeticException) {
+    println("Cannot divide by zero!")
+}
+</code>
+</pre>
+
+            <h2>Libraries and Frameworks</h2>
+            <p>Popular libraries and frameworks for Kotlin:</p>
+            <ul>
+                <li>Android SDK: Official software development kit for Android development</li>
+                <li>Ktor: Framework for building asynchronous servers and clients</li>
+                <li>Exposed: SQL database access library</li>
+                <li>Koin: Dependency injection framework</li>
+            </ul>
+
+            <h2>Practical Examples and Projects</h2>
+            <p>Simple Android App with Kotlin:</p>
+            <pre>
+<code>import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        button.setOnClickListener {
+            textView.text = "Hello, Kotlin!"
+        }
+    }
+}
+</code>
+</pre>
+
+            <h2>Best Practices and Tips</h2>
+            <p>Write clean, readable code by following Kotlin's coding standards and conventions.</p>
+            <p>Leverage Kotlin's powerful null safety features to avoid null pointer exceptions.</p>
+            <p>Use extension functions to add functionality to existing classes without modifying their source code.</p>
+            <center>finally! you finished kotlin! congratulations :)</center>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+    <script src="security.js"></script>
+</b>
+</body>
+</html>

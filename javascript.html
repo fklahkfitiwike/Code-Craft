@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <b>
+
+    
+    <header class="fixed header">
+        <nav>
+            <div class="logo"><a href="index.html">Code Craft</a></div>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                <li><a href="contact.html"><i class="fa-sharp fa-solid fa-comment"></i></a></li>
+                <li><a href="sign-up.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+        <!-- <div class="hero">
+            <h1>Learn JavaScript</h1>
+            <p>Start your JavaScript programming journey here.</p>
+        </div> -->
+    </header>
+    <main>
+        <section id="javascript-content" class="section-padding">
+            <h2>Overview and Introduction</h2>
+            <p>JavaScript is a dynamic programming language primarily used for web development to create interactive effects within web browsers. It is an essential technology alongside HTML and CSS, enabling dynamic and interactive websites.</p>
+
+            <h2>Setup and Installation</h2>
+            <p>JavaScript is supported by most modern web browsers, which have built-in JavaScript engines. To get started, you can use a text editor or IDE such as Visual Studio Code, Sublime Text, or Atom to write your JavaScript code.</p>
+            <p>Embedding JavaScript in an HTML document:
+                <ul>
+                    <li>Internal JavaScript: Include JavaScript code within the <code>&lt;script&gt;</code> tag inside the HTML document.</li>
+                    <li>External JavaScript: Write JavaScript code in a separate file with a <code>.js</code> extension (e.g., <code>script.js</code>) and link it to the HTML document using the <code>&lt;script&gt;</code> tag.</li>
+                </ul>
+            </p>
+            <pre>
+<code>&lt;!-- Internal JavaScript --&gt;
+&lt;script&gt;
+    console.log("Hello, World!");
+&lt;/script&gt;
+
+&lt;!-- External JavaScript --&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+</code>
+</pre>
+
+            <h2>Basic Syntax and Concepts</h2>
+            <p>Variables:
+                <ul>
+                    <li><code>var</code>, <code>let</code>, and <code>const</code>: Declare variables. <code>var</code> is function-scoped, while <code>let</code> and <code>const</code> are block-scoped.</li>
+                </ul>
+            </p>
+            <pre>
+<code>var name = "John";
+let age = 30;
+const country = "USA";
+</code>
+</pre>
+
+            <p>Data Types:
+                <ul>
+                    <li>String, Number, Boolean, Object, Array, Null, Undefined, Symbol</li>
+                </ul>
+            </p>
+            <pre>
+<code>let str = "Hello, World!";
+let num = 42;
+let isActive = true;
+let person = { firstName: "John", lastName: "Doe" };
+let numbers = [1, 2, 3, 4, 5];
+let empty = null;
+let undef;
+</code>
+</pre>
+
+            <p>Operators: Arithmetic, Assignment, Comparison, Logical, etc.</p>
+            <pre>
+<code>let sum = 5 + 3;
+let isEqual = (5 === 5);
+let isBothTrue = (true && false);
+</code>
+</pre>
+
+            <p>Control Structures: <code>if</code>, <code>for</code>, <code>while</code></p>
+            <pre>
+<code>if (age > 18) {
+    console.log("Adult");
+} else {
+    console.log("Not an adult");
+}
+
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+let i = 0;
+while (i < 5) {
+    console.log(i);
+    i++;
+}
+</code>
+</pre>
+
+            <p>Functions: <code>function</code> keyword and arrow functions</p>
+            <pre>
+<code>function greet(name) {
+    return "Hello, " + name;
+}
+
+let add = (a, b) => a + b;
+</code>
+</pre>
+
+            <h2>Advanced Concepts</h2>
+            <p>Object-Oriented Programming: Classes and Objects</p>
+            <pre>
+<code>class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    getFullName() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+
+let person = new Person("John", "Doe");
+console.log(person.getFullName());
+</code>
+</pre>
+
+            <p>Promises and Async/Await: Handling asynchronous operations</p>
+            <pre>
+<code>let fetchData = new Promise((resolve, reject) => {
+    let data = "Sample Data";
+    resolve(data);
+});
+
+fetchData.then(data => {
+    console.log(data);
+}).catch(error => {
+    console.log(error);
+});
+
+async function getData() {
+    try {
+        let data = await fetchData;
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+}
+getData();
+</code>
+</pre>
+
+            <p>DOM Manipulation: Interacting with the HTML Document Object Model</p>
+            <pre>
+<code>document.getElementById("myElement").innerHTML = "New Content";
+document.querySelector(".myClass").style.color = "blue";
+</code>
+</pre>
+
+            <h2>Libraries and Frameworks</h2>
+            <p>Popular libraries and frameworks for front-end development:</p>
+            <ul>
+                <li>React: A JavaScript library for building user interfaces.</li>
+                <li>Angular: A platform for building mobile and desktop web applications.</li>
+                <li>Vue: A progressive framework for building user interfaces.</li>
+            </ul>
+            <p>Server-side development with Node.js: A runtime environment that executes JavaScript code outside a web browser.</p>
+            <pre>
+<code>const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+</code>
+</pre>
+
+            <h2>Practical Examples and Projects</h2>
+            <p>Interactive To-Do List App:</p>
+            <pre>
+<code>&lt;!-- HTML --&gt;
+&lt;input type="text" id="new-task" placeholder="Add a new task"&gt;
+&lt;button onclick="addTask()"&gt;Add Task&lt;/button&gt;
+&lt;ul id="task-list"&gt;&lt;/ul&gt;
+
+&lt;!-- JavaScript --&gt;
+&lt;script&gt;
+    function addTask() {
+        let task = document.getElementById("new-task").value;
+        let listItem = document.createElement("li");
+        listItem.textContent = task;
+        document.getElementById("task-list").appendChild(listItem);
+    }
+&lt;/script&gt;
+</code>
+</pre>
+
+            <p>Simple Game using HTML Canvas:</p>
+            <pre>
+<code>&lt;!-- HTML --&gt;
+&lt;canvas id="gameCanvas" width="500" height="400"&gt;&lt;/canvas&gt;
+
+&lt;!-- JavaScript --&gt;
+&lt;script&gt;
+    let canvas = document.getElementById("gameCanvas");
+    let context = canvas.getContext("2d");
+
+    context.fillStyle = "#FF0000";
+    context.fillRect(0, 0, 50, 50);
+&lt;/script&gt;
+</code>
+</pre>
+
+            <p>RESTful API with Node.js:</p>
+            <pre>
+<code>const express = require('express');
+const app = express();
+const port = 3000;
+
+let items = [];
+
+app.use(express.json());
+
+app.get('/items', (req, res) => {
+    res.json(items);
+});
+
+app.post('/items', (req, res) => {
+    let newItem = req.body;
+    items.push(newItem);
+    res.status(201).json(newItem);
+});
+
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
+});
+</code>
+</pre>
+
+            <h2>Best Practices and Tips</h2>
+            <p>Following ESLint Guidelines: Use ESLint to maintain consistent coding style and avoid errors.</p>
+            <p>Optimize Code for Performance: Avoid using inefficient code patterns and optimize for speed and memory usage.</p>
+            <pre>
+<code>let nums = [1, 2, 3, 4, 5];
+let doubled = nums.map(num => num * 2);
+</code>
+</pre>
+<center>finally! you finished JavaScript! congratulations :)</center>
+</section>
+</main>
+<script src="scripts.js"></script>
+<script src="security.js"></script>
+</b>
+</body>
+</html>
