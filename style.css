@@ -86,18 +86,6 @@ nav ul li a:hover {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-/* .section {
-  cursor: pointer;
-  padding: 20px;
-  background-color: #222;
-  border: 1px solid #333;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  transition: background-color 0.3s, transform 0.3s;
-  text-align: center;
-  width: 45%;
-  margin: 10px;
-} */
 .section i {
   font-size: 48px;
   color: #007bff;
@@ -228,7 +216,7 @@ div button a {
 
 
 /* Adjustments for black and white theme */
-.section {
+.section{
   cursor: pointer;
   padding: 20px;
   border: 1px solid #ddd;
@@ -260,5 +248,24 @@ div button a {
   animation: rotateIcon 2s infinite;
 }
 main{
-  padding-top: 70px;
+  padding-top: 30px;
+}
+.welcome{
+  font-size: 48px;
+}
+.wbutton {
+  transition: padding 0.2s;
+}
+
+.wbutton:hover {
+  padding: 1.15em 1.15em; /* Increase padding by 15% */
+}
+/* Glowing Text on Hover */
+h1, h2, h3, h4, h5, h6, p, a, i {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1:hover, h2:hover, p:hover, a:hover, i:hover {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
